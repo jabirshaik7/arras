@@ -133,3 +133,63 @@ average = total / len(arr)
 
 print("Average =", average)
 
+#Write a Python program to find the second largest number in an array without using sort().
+
+numbers = [10, 45, 20, 80, 60]
+
+largest = numbers[0]
+second_largest = numbers[0]
+
+for num in numbers:
+    if num > largest:
+        second_largest = largest
+        largest = num
+
+    elif num > second_largest and num != largest:
+        second_largest = num
+
+print("Largest Number:", largest)
+print("Second Largest Number:", second_largest)
+
+
+#Write a Python program to move all zeros to the end of an array while maintaining the order of other elements.
+numbers = [10, 0, 20, 0, 30, 40, 0]
+
+result = []
+zero_count = 0
+
+for num in numbers:
+    if num == 0:
+        zero_count += 1
+    else:
+        result.append(num)
+
+for i in range(zero_count):
+    result.append(0)
+
+print("Original Array:", numbers)
+print("Updated Array:", result)
+
+#Write a Python program to find duplicate elements in an array without using set().
+
+numbers = [10, 20, 30, 20, 40, 10, 50]
+
+duplicates = []
+
+for i in range(len(numbers)):
+    for j in range(i + 1, len(numbers)):
+
+        if numbers[i] == numbers[j]:
+            if numbers[i] not in duplicates:
+                duplicates.append(numbers[i])
+
+print("Duplicate Elements:", duplicates)
+
+
+
+
+
+
+
+
+
